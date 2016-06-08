@@ -14,21 +14,21 @@
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-    <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
   </head>
-  <body ng-app="starter" ng-controller="MyCtrl">
+  <body ng-app="starter">
     <ion-pane>
       <ion-header-bar class="bar-stable">
         <h1 class="title">Ionic Test</h1>
       </ion-header-bar>
       <ion-content>
         <!-- accordion list -->
-        <ion-list>
+        <ion-list ng-controller="MyCtrl">
           <div ng-repeat="group in groups">
             <ion-item class="item-stable" ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group)}">
                 <i class="icon" ng-class="isGroupShown(group) ? &apos;ion-minus&apos; : &apos;ion-plus&apos;"></i>
@@ -45,6 +45,10 @@
             <i class="icon ion-volume-low"></i>
             <input type="range" name="volume">
             <i class="icon ion-volume-high"></i>
+        </div>
+        <!-- calendar -->
+        <div ng-controller="MyCalendar">
+          <button class="button" ng-click="createEvent()">Create Event</button>
         </div>
       </ion-content>
     </ion-pane>
