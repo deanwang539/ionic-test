@@ -27,6 +27,7 @@
         <h1 class="title">Ionic Test</h1>
       </ion-header-bar>
       <ion-content>
+        <!-- accordion list -->
         <ion-list>
           <div ng-repeat="group in groups">
             <ion-item class="item-stable" ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group)}">
@@ -39,6 +40,12 @@
             </ion-item>
           </div>
         </ion-list>
+        <!-- slider range -->
+        <div class="range">
+            <i class="icon ion-volume-low"></i>
+            <input type="range" name="volume">
+            <i class="icon ion-volume-high"></i>
+        </div>
       </ion-content>
     </ion-pane>
   </body>
